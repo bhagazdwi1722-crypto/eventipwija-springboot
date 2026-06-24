@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - EventIPWIJA</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="logo">
+            <h2>EVENTIPWIJA</h2>
+        </div>
+
+        <div class="menu">
+            <a href="/">🏠 Dashboard</a>
+            <a href="/events">📅 Daftar Event</a>
+            <a href="/my-events">📋 Event Saya</a>
+            <a href="/attendance">✅ Absensi</a>
+            <a href="/certificates">🏆 Sertifikat</a>
+            <a href="/profile">👤 Profil</a>
+            <a href="/login">🚪 Logout</a>
+        </div>
+
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="navbar">
+            <h2>Dashboard</h2>
+        </div>
+
+        <div class="banner">
+            <h1>Selamat Datang di EventIPWIJA</h1>
+
+            <br>
+
+            <p>
+                Platform kegiatan mahasiswa Universitas IPWIJA
+                untuk pendaftaran event, absensi dan sertifikat.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h1>15</h1>
+                <p>Total Event</p>
+            </div>
+
+            <div class="card">
+                <h1>5</h1>
+                <p>Event Aktif</p>
+            </div>
+
+            <div class="card">
+                <h1>3</h1>
+                <p>Event Saya</p>
+            </div>
+
+            <div class="card">
+                <h1>2</h1>
+                <p>Sertifikat</p>
+            </div>
+
+        </div>
+
+        <h2>Event Terbaru</h2>
+
+        <br>
+
+        <div class="event-card">
+            <h3>Seminar Artificial Intelligence</h3>
+            <p>20 Juli 2026</p>
+        </div>
+
+        <div class="event-card">
+            <h3>Workshop UI/UX Design</h3>
+            <p>25 Juli 2026</p>
+        </div>
+
+        <div class="event-card">
+            <h3>Pelatihan Data Analyst</h3>
+            <p>30 Juli 2026</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

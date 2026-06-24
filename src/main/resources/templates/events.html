@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Daftar Event</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+
+<div class="logo">
+<h2>EVENTIPWIJA</h2>
+</div>
+
+<div class="menu">
+<a href="/">🏠 Dashboard</a>
+<a href="/events">📅 Daftar Event</a>
+<a href="/my-events">📋 Event Saya</a>
+<a href="/attendance">✅ Absensi</a>
+<a href="/certificates">🏆 Sertifikat</a>
+<a href="/profile">👤 Profil</a>
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="navbar">
+<h2>Daftar Event</h2>
+</div>
+
+<div class="event-card"
+     th:each="event : ${events}">
+
+<h3 th:text="${event.namaEvent}">
+Nama Event
+</h3>
+
+<p>
+📅
+<span th:text="${event.tanggal}">
+Tanggal
+</span>
+</p>
+
+<p>
+📍
+<span th:text="${event.lokasi}">
+Lokasi
+</span>
+</p>
+
+<br>
+
+<a href="/event-detail"
+   class="btn">
+Detail Event
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
