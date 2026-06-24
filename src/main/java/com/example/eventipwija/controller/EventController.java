@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.eventipwija.service.EventService;
 
@@ -21,5 +22,17 @@ public class EventController {
                 eventService.getAllEvents());
 
         return "events";
+    }
+
+    @GetMapping("/event/{id}")
+    public String detailEvent(
+            @PathVariable Long id,
+            Model model) {
+
+        model.addAttribute(
+                "event",
+                eventService.getEventById(id));
+
+        return "detail-event";
     }
 }

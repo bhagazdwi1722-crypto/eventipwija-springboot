@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Event Saya</title>
+
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
@@ -11,18 +12,20 @@
 <div class="container">
 
 <div class="sidebar">
-    <div class="logo">
-        <h2>EVENTIPWIJA</h2>
-    </div>
 
-    <div class="menu">
-        <a href="/">🏠 Dashboard</a>
-        <a href="/events">📅 Daftar Event</a>
-        <a href="/my-events">📋 Event Saya</a>
-        <a href="/attendance">✅ Absensi</a>
-        <a href="/certificates">🏆 Sertifikat</a>
-        <a href="/profile">👤 Profil</a>
-    </div>
+<div class="logo">
+<h2>EVENTIPWIJA</h2>
+</div>
+
+<div class="menu">
+<a href="/">Dashboard</a>
+<a href="/events">Daftar Event</a>
+<a href="/my-events">Event Saya</a>
+<a href="/attendance">Absensi</a>
+<a href="/certificates">Sertifikat</a>
+<a href="/profile">Profil</a>
+</div>
+
 </div>
 
 <div class="main">
@@ -31,17 +34,33 @@
 <h2>Event Saya</h2>
 </div>
 
-<div class="event-card">
-<h3>Seminar Artificial Intelligence</h3>
-<p>Status : Terdaftar</p>
+<div class="event-card"
+     th:each="event : ${events}">
+
+<h2 th:text="${event.namaEvent}">
+Nama Event
+</h2>
+
+<p>
+Tanggal :
+<span th:text="${event.tanggal}">
+</span>
+</p>
+
+<p>
+Lokasi :
+<span th:text="${event.lokasi}">
+</span>
+</p>
+
+<p>
+Status : TERDAFTAR
+</p>
+
 </div>
 
-<div class="event-card">
-<h3>Workshop UI/UX Design</h3>
-<p>Status : Hadir</p>
 </div>
 
-</div>
 </div>
 
 </body>
