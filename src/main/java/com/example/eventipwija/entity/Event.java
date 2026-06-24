@@ -1,11 +1,6 @@
 package com.example.eventipwija.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "events")
@@ -15,7 +10,10 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nama_event")
     private String namaEvent;
+
+    private String deskripsi;
 
     private String tanggal;
 
@@ -23,8 +21,7 @@ public class Event {
 
     private Integer kuota;
 
-    @Column(length = 1000)
-    private String deskripsi;
+    private String status;
 
     public Event() {
     }
@@ -39,6 +36,14 @@ public class Event {
 
     public void setNamaEvent(String namaEvent) {
         this.namaEvent = namaEvent;
+    }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 
     public String getTanggal() {
@@ -65,11 +70,11 @@ public class Event {
         this.kuota = kuota;
     }
 
-    public String getDeskripsi() {
-        return deskripsi;
+    public String getStatus() {
+        return status;
     }
 
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

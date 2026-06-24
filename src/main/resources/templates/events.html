@@ -18,12 +18,12 @@
 </div>
 
 <div class="menu">
-<a href="/">🏠 Dashboard</a>
-<a href="/events">📅 Daftar Event</a>
-<a href="/my-events">📋 Event Saya</a>
-<a href="/attendance">✅ Absensi</a>
-<a href="/certificates">🏆 Sertifikat</a>
-<a href="/profile">👤 Profil</a>
+<a href="/">Dashboard</a>
+<a href="/events">Daftar Event</a>
+<a href="/my-events">Event Saya</a>
+<a href="/attendance">Absensi</a>
+<a href="/certificates">Sertifikat</a>
+<a href="/profile">Profil</a>
 </div>
 
 </div>
@@ -37,28 +37,34 @@
 <div class="event-card"
      th:each="event : ${events}">
 
-<h3 th:text="${event.namaEvent}">
+<h2 th:text="${event.namaEvent}">
 Nama Event
-</h3>
+</h2>
 
 <p>
-📅
-<span th:text="${event.tanggal}">
-Tanggal
-</span>
+Tanggal :
+<span th:text="${event.tanggal}"></span>
 </p>
 
 <p>
-📍
-<span th:text="${event.lokasi}">
-Lokasi
-</span>
+Lokasi :
+<span th:text="${event.lokasi}"></span>
+</p>
+
+<p>
+Kuota :
+<span th:text="${event.kuota}"></span>
+</p>
+
+<p>
+Status :
+<span th:text="${event.status}"></span>
 </p>
 
 <br>
 
-<a href="/event-detail"
-   class="btn">
+<a class="btn"
+   th:href="@{/event/{id}(id=${event.id})}">
 Detail Event
 </a>
 

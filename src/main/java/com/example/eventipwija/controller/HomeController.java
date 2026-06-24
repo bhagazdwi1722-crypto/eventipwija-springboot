@@ -11,19 +11,9 @@ public class HomeController {
         return "dashboard";
     }
 
-    @GetMapping("/event-detail")
-    public String detailEvent() {
-        return "detail-event";
-    }
-
     @GetMapping("/profile")
     public String profile() {
         return "profile";
-    }
-
-    @GetMapping("/my-events")
-    public String myEvents() {
-        return "my-events";
     }
 
     @GetMapping("/attendance")
